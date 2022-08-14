@@ -5,14 +5,14 @@ import AppLayout from '../components/AppLayout';
 import useInput from '../hooks/useInput';
 
 const Signup = () => {
+    const [id, onChangeId] = useInput('');
+    const [nickname, onChangeNickname] = useInput('');
+    const [password, onChangePassword] = useInput('');
+
     const [passwordCheck, setPasswordCheck] = useState('');
     const [term, setTerm] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
     const [termError, setTermError] = useState(false);
-
-    const [id, onChangeId] = useInput('');
-    const [nickname, onChangeNickname] = useInput('');
-    const [password, onChangePassword] = useInput('');
 
     const onSubmit = useCallback(() => {
         if (password !== passwordCheck) {
